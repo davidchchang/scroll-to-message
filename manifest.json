@@ -10,8 +10,16 @@
     "default_popup": "popup.html"
   },
 
+  "content_scripts": [
+      {
+        "matches": ["https://app.couple.me/*"],
+        "js": ["content_script.js"]
+      }
+    ],
+
   "permissions": [
-    "activeTab",
-    "https://ajax.googleapis.com/"
+    "tabs",
+    "contextMenus",
+    "activeTab"
   ]
 }
