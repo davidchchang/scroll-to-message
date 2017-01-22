@@ -14,6 +14,16 @@ window.scroll2message = {
     setStickyId: function () {
         this.sticky_id = this.last_clicked_id;
         console.log("scroll ID set to", this.sticky_id);
+
+        // add the data-scroll attribute to smooth scroll to this element
+        document.getElementById(this.sticky_id).setAttribute("data-scroll", true);
+    },
+
+    scrollToTarget: function() {
+        if (this.sticky_id) {
+            // location.hash = "#" + this.sticky_id;
+            document.getElementById(this.sticky_id).scrollIntoView();
+        }
     }
 };
 
@@ -28,6 +38,15 @@ chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
         if (request.eventType == "setMessageToScrollTo") {
             window.scroll2message.setStickyId();
+        } else if (request.eventType == "scrollToMessage") {
+            if (window.scroll2message.sticky_id) {
+                window.scroll2message.scrollToTarget();
+                sendResponse({result: "scrolling"});
+            } else {
+                sendResponse({result: "targetNotSet"});
+            }
         }
     }
 );
+
+// smoothScroll.init();
