@@ -13,7 +13,7 @@
         "https://app.couple.me/*"
       ],
       "js": [
-        "content_script.js"
+        "smooth-scroll.min.js", "content_script.js"
       ]
     }
   ],
