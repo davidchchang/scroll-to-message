@@ -8,5 +8,6 @@ function sendMessageToSetScroll() {
 
 var id = chrome.contextMenus.create({
     "title": "Set Message to Scroll to",
-    "onclick": sendMessageToSetScroll
+    "onclick": sendMessageToSetScroll,
+    "contexts": ['page', 'selection']
 });
