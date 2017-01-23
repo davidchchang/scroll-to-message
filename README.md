@@ -1,5 +1,5 @@
 # scroll-to-message
-Chrome extension to scroll to a pre-selected message, useful for long conversations.
+Chrome extension to scroll to a pre-selected message, useful for those really (really) long conversations.
 
 # Installation Instructions
 
@@ -18,8 +18,8 @@ Example platforms include:
 
 # How to Use
 
-1. Install plugin and ensure it is enabled
-2. Log into a support website
+1. Install extension and ensure it is enabled
+2. Log into a supported website
 3. Right-click on a message you want to scroll to
 4. Select "Set Message to Scroll to"
 5. Whenever you want to scroll back to the original message, click the "scroll2message" browser action. The page should automatically jump back to the original message you targeted.
